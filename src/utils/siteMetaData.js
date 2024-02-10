@@ -5,7 +5,7 @@ const siteMetadata = {
   description: 'VIPsCombo',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://vipscombo.vercel.app/', // your website URL
+  siteUrl: 'https://vips-combo.vercel.app/', // your website URL
   siteLogo: '/alightmotionlogo.webp',
   socialBanner: '/alightmotionlogo.webp', // add social banner in the public folder
   email: 'aimahusnain@gmail.com',
