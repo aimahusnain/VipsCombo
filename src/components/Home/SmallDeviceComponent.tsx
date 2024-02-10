@@ -73,10 +73,10 @@ const SmallDeviceComponent = ({ blogs }: { blogs: any[] }) => {
               </Link>
 
               <div className="mt-5 mb-10 w-1/2">
-                <Link href={blog.url} className="text-lg font-bold text-white">
+                <Link href={blog.url} className="text-lg font-bold dark:text-white text-black">
                   {blog.title}
                 </Link>
-                <p className="mt-1 font-normal font-sans text-slate-400">
+                <p className="mt-1 font-normal font-sans dark:text-slate-900 text-slate-400">
                   {blog.description}
                 </p>
               </div>
