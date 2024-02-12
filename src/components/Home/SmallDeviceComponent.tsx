@@ -95,16 +95,19 @@ const HomePageComponent = () => {
                 <CarouselItem className="group basis-60" key={index}>
                   <div className="relative rounded-xl overflow-hidden w-[222px] h-[330px]">
                     <Link href={blog.url}>
-                      <Image
-                        src={blog.image.filePath.replace("../public", "")}
-                        placeholder="blur"
-                        blurDataURL={blog.image.blurhashDataUrl}
-                        alt={blog.title}
-                        width={blog.image.width}
-                        height={blog.image.height}
-                        className="w-full h-full object-center object-cover"
-                        sizes="(max-width: 1180px) 100vw, 50vw"
-                      />
+                      {blog.image && (
+  <Image
+    src={blog.image.filePath.replace("../public", "")}
+    placeholder="blur"
+    blurDataURL={blog.image.blurhashDataUrl}
+    alt={blog.title}
+    width={blog.image.width}
+    height={blog.image.height}
+    className="w-full h-full object-center object-cover"
+    sizes="(max-width: 1180px) 100vw, 50vw"
+  />
+)}
+
                     </Link>
                     <Link
                       href={blog.url}
