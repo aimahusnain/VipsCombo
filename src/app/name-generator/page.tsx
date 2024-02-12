@@ -1,12 +1,25 @@
-'use client'
+"use client";
 
 import React, { useState, ChangeEvent } from "react";
-import { fonts } from "./data";
+import { fonts, strikeThrough, tildeStrikeThrough, underline,doubleUnderline, slashThrough, stinky, heartsBetween, arrowBelow, crossAboveBelow } from "./data";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const combinedCharMap: any = {
+  ...fonts,
+  strikeThrough: strikeThrough,
+  tildeStrikeThrough: tildeStrikeThrough,
+  underline: underline,
+  doubleUnderline: doubleUnderline,
+  slashThrough: slashThrough,
+  stinky: stinky,
+  heartsBetween: heartsBetween,
+  arrowBelow: arrowBelow,
+  crossAboveBelow: crossAboveBelow,
+};
+
 interface FancyTextContainerProps {
-  charMap: { [key: string]: string };
+  charMap: any;
   inputText: string;
   fontName: string;
 }
@@ -17,9 +30,7 @@ const FancyTextGenerator: React.FC = () => {
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
   };
-
   const displayedText = inputText.trim() || "VIPs Combo";
-
   return (
     <div className="mx-auto max-w-6xl px-4">
       <h1 className="text-3xl mb-6">Fancy Font Generator</h1>
@@ -31,7 +42,7 @@ const FancyTextGenerator: React.FC = () => {
         onChange={handleInputChange}
       />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-        {Object.entries(fonts).map(([fontName, fontMap]) => (
+        {Object.entries(combinedCharMap).map(([fontName, fontMap]) => (
           <FancyTextContainer
             key={fontName}
             charMap={fontMap}
@@ -45,33 +56,41 @@ const FancyTextGenerator: React.FC = () => {
   );
 };
 
+// FancyTextContainer component
 const FancyTextContainer: React.FC<FancyTextContainerProps> = ({
   charMap,
   inputText,
   fontName,
 }) => {
-  const generateFancyText = (text: string, charMap: { [key: string]: string }) => {
-    return text
-      .split("")
-      .map((char, index) => {
-        const lowercaseChar = char.toLowerCase();
-        if (charMap[lowercaseChar]) {
-          return text[index].toUpperCase() === char ? charMap[lowercaseChar].toUpperCase() : charMap[lowercaseChar];
-        } else {
-          return char;
-        }
-      })
-      .join("");
+  // Function to generate fancy text
+  const generateFancyText = (text: string): string => {
+    if (typeof charMap === "function") {
+      return charMap(text);
+    } else {
+      return text
+        .split("")
+        .map((char, index) => {
+          const lowercaseChar = char.toLowerCase();
+          if (charMap[lowercaseChar]) {
+            return text[index].toUpperCase() === char
+              ? charMap[lowercaseChar].toUpperCase()
+              : charMap[lowercaseChar];
+          } else {
+            return char;
+          }
+        })
+        .join("");
+    }
   };
 
-  const fancyText = generateFancyText(inputText, charMap);
+  const fancyText = generateFancyText(inputText);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(fancyText);
-    toast.success("Text copied to clipboard!", {
+    toast.success("Copied to clipboard!", {
       position: "bottom-right",
       autoClose: 2000,
-      hideProgressBar: false,
+      hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
@@ -81,8 +100,8 @@ const FancyTextContainer: React.FC<FancyTextContainerProps> = ({
 
   return (
     <div className="copy-container bg-gray-100 p-4 rounded">
-      <h2 className="text-xl mb-2 font-bold">{fontName}</h2>
-      <div className="copyable-text text-lg mb-4">{fancyText}</div>
+      <h2 className="text-xl mb-2 font-bold">{fancyText}</h2>
+
       <div>
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
