@@ -16,6 +16,9 @@ const FancyTextGenerator: React.FC = () => {
     setInputText(event.target.value);
   };
 
+    const displayedText = inputText.trim() || "VIPs Combo";
+
+
   return (
     <div className="mx-auto max-w-6xl px-4">
       <h1 className="text-3xl mb-6">Fancy Font Generator</h1>
@@ -28,10 +31,10 @@ const FancyTextGenerator: React.FC = () => {
       />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
         {Object.entries(fonts).map(([fontName, fontMap]) => (
-          <FancyTextContainer
+         <FancyTextContainer
             key={fontName}
             charMap={fontMap}
-            inputText={inputText}
+            inputText={displayedText} // Pass displayedText instead of inputText
             fontName={fontName}
           />
         ))}
