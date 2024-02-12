@@ -5,7 +5,7 @@ import React from "react";
 
 const BlogLayoutThree = ({ blog }: {blog: any}) => {
   return (
-    <div className="group flex flex-col items-center text-black dark:text-light">
+    <div className="group flex flex-col items-center text-black dark:text-light my-5">
       <Link aria-label="article image" href={blog.url} className="h-full rounded-3xl overflow-hidden">
         <Image
           src={blog.image.filePath.replace("../public", "")}
@@ -23,8 +23,9 @@ const BlogLayoutThree = ({ blog }: {blog: any}) => {
         <span className="uppercase text-primary font-semibold text-xs sm:text-sm">
           {blog.tags[0]}
         </span>
-        <Link aria-label={blog.title} href={blog.url} className="inline-block my-1">
-          <h2 className="hover:text-primary hover:underline capitalize text-[24px] font-bold leading-relaxed mb-[0.5rem]">
+
+        <Link aria-label={blog.title} href={blog.url} className="inline-block">
+          <h2 className="hover:text-primary hover:underline capitalize text-[24px] font-bold leading-relaxed">
               {blog.title}
           </h2>
         </Link>

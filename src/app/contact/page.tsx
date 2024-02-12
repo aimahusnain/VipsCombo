@@ -172,7 +172,6 @@ const Create: NextPage = () => {
               </div>
             </div>
 
-            {/* TODO: change the color of Blogs text that is in the homepage and categories page. */}
             <div>
               <label htmlFor="message" className="block text-sm font-medium">
                 Message:

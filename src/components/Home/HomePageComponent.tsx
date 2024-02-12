@@ -79,9 +79,10 @@ const HomePageComponent = () => {
       {!isTyping && (
         <FeaturedPostsDesign blogs={allBlogs} featuredBlogs={featuredBlogs} />
       )} */}
-         <ParallaxScroll
-        blogs={filteredBlogs}
-      />
+
+
+
+      <ParallaxScroll blogs={filteredBlogs} />
     </>
   );
 };
