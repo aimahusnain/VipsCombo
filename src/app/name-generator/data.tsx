@@ -1,4 +1,69 @@
 export const fonts = {
+  Emojis_Text: {
+    0: "0",
+    1: "1",
+    2: "2",
+    3: "3",
+    4: "4",
+    5: "5",
+    6: "6",
+    7: "7",
+    8: "8",
+    9: "9",
+    a: "🅰",
+    b: "🅱",
+    c: "🌜",
+    d: "🐬",
+    e: "𝓔",
+    f: "🔩",
+    g: "🐋",
+    h: "♓",
+    i: "🕴",
+    j: "🎷",
+    k: "🎉",
+    l: "👢",
+    m: "Ⓜ",
+    n: "🥄",
+    o: "😀",
+    p: "🅿",
+    q: "🍳",
+    r: "🌱",
+    s: "💲",
+    t: "🍄",
+    u: "⛎",
+    v: "✌️",
+    w: "🔱",
+    x: "❎",
+    y: "🏋",
+    z: "💤",
+    A: "🅰",
+    B: "🅱",
+    C: "🌜",
+    D: "🐬",
+    E: "𝓔",
+    F: "🔩",
+    G: "🐋",
+    H: "♓",
+    I: "🕴",
+    J: "🎷",
+    K: "🎉",
+    L: "👢",
+    M: "Ⓜ",
+    N: "🥄",
+    O: "😀",
+    P: "🅿",
+    Q: "🍳",
+    R: "🌱",
+    S: "💲",
+    T: "🍄",
+    U: "⛎",
+    V: "✌",
+    W: "🔱",
+    X: "❎",
+    Y: "🏋",
+    Z: "💤",
+  },
+
   Light_Text_Bubbles: {
     0: "⓪",
     1: "①",
@@ -63,6 +128,7 @@ export const fonts = {
     Y: "Ⓨ",
     Z: "Ⓩ",
   },
+
   myFont1: {
     0: "𝟢",
     1: "𝟣",
@@ -127,6 +193,7 @@ export const fonts = {
     Y: "𝒴",
     Z: "𝓩",
   },
+
   doubleStruckCharMap: {
     0: "𝟘",
     1: "𝟙",
@@ -191,6 +258,7 @@ export const fonts = {
     Y: "𝕐",
     Z: "ℤ",
   },
+
   squiggleCharMap: {
     0: "0",
     1: "1",
@@ -255,6 +323,7 @@ export const fonts = {
     Y: "ץ",
     Z: "չ",
   },
+
   wingdingsCharMap: {
     0: "📁︎",
     1: "📂︎",
@@ -471,6 +540,7 @@ export const fonts = {
     þ: "☑︎",
     ÿ: "◻︎",
   },
+
   vaporwaveCharMap: {
     " ": "　",
     "`": "`",
@@ -567,6 +637,7 @@ export const fonts = {
     ">": ">",
     "?": "？",
   },
+
   futureAlienCharMap: {
     0: "0",
     1: "1",
@@ -631,6 +702,7 @@ export const fonts = {
     Y: "ᖻ",
     Z: "ᗱ",
   },
+
   squiggle6CharMap: {
     0: "0",
     1: "1",
@@ -695,6 +767,7 @@ export const fonts = {
     Y: "ฯ",
     Z: "ຊ",
   },
+
   squiggle5CharMap: {
     0: "0",
     1: "1",
@@ -759,6 +832,7 @@ export const fonts = {
     Y: "ყ",
     Z: "ʑ",
   },
+
   asianStyle2CharMap: {
     0: "0",
     1: "1",
@@ -823,6 +897,7 @@ export const fonts = {
     Y: "ﾘ",
     Z: "乙",
   },
+
   asianStyleCharMap: {
     0: "0",
     1: "1",
@@ -887,6 +962,7 @@ export const fonts = {
     Y: "ㄚ",
     Z: "乙",
   },
+
   squaresCharMap: {
     0: "0",
     1: "1",
@@ -951,6 +1027,7 @@ export const fonts = {
     Y: "🅈",
     Z: "🅉",
   },
+
   squiggle4CharMap: {
     0: "0",
     1: "1",
@@ -1015,6 +1092,7 @@ export const fonts = {
     Y: "Ꭹ",
     Z: "ፚ",
   },
+
   neonCharMap: {
     0: "0",
     1: "1",
@@ -1079,6 +1157,7 @@ export const fonts = {
     Y: "Y",
     Z: "ᘔ",
   },
+
   squiggle3CharMap: {
     0: "0",
     1: "1",
@@ -1143,6 +1222,7 @@ export const fonts = {
     Y: "ʏ",
     Z: "ʐ",
   },
+
   monospaceCharMap: {
     0: "𝟶",
     1: "𝟷",
@@ -1207,6 +1287,7 @@ export const fonts = {
     Y: "𝚈",
     Z: "𝚉",
   },
+
   boldItalicCharMap: {
     0: "0",
     1: "1",
@@ -1271,6 +1352,7 @@ export const fonts = {
     Y: "𝙔",
     Z: "𝙕",
   },
+
   boldCharMap: {
     0: "𝟎",
     1: "𝟏",
@@ -1335,6 +1417,7 @@ export const fonts = {
     Y: "𝐘",
     Z: "𝐙",
   },
+
   boldSansCharMap: {
     0: "𝟬",
     1: "𝟭",
@@ -1399,6 +1482,7 @@ export const fonts = {
     Y: "𝗬",
     Z: "𝗭",
   },
+
   italicCharMap: {
     0: "0",
     1: "1",
@@ -1463,6 +1547,7 @@ export const fonts = {
     Y: "𝘠",
     Z: "𝘡",
   },
+
   squiggle2CharMap: {
     0: "0",
     1: "1",
@@ -1527,6 +1612,7 @@ export const fonts = {
     Y: "Y",
     Z: "Z",
   },
+
   currencyCharMap: {
     0: "0",
     1: "1",
@@ -1591,6 +1677,7 @@ export const fonts = {
     Y: "Ɏ",
     Z: "Ⱬ",
   },
+
   symbolsCharMap: {
     0: "0",
     1: "1",
@@ -1655,6 +1742,7 @@ export const fonts = {
     Y: "¥",
     Z: "Z",
   },
+
   greekCharMap: {
     0: "0",
     1: "1",
@@ -1719,6 +1807,7 @@ export const fonts = {
     Y: "у",
     Z: "z",
   },
+
   bentTextCharMap: {
     0: "⊘",
     1: "𝟙",
@@ -1783,6 +1872,7 @@ export const fonts = {
     Y: "Ӌ",
     Z: "ɀ",
   },
+  
   upperAnglesCharMap: {
     0: "0",
     1: "1",
@@ -1847,6 +1937,7 @@ export const fonts = {
     Y: "Y",
     Z: "Z",
   },
+
   subscriptCharMap: {
     0: "₀",
     1: "₁",
@@ -1916,6 +2007,7 @@ export const fonts = {
     "(": "₍",
     ")": "₎",
   },
+
   superscriptCharMap: {
     0: "⁰",
     1: "¹",
@@ -1985,6 +2077,7 @@ export const fonts = {
     "(": "⁽",
     ")": "⁾",
   },
+  
   medievalCharMap: {
     0: "0",
     1: "1",
@@ -2049,6 +2142,7 @@ export const fonts = {
     Y: "𝖄",
     Z: "𝖅",
   },
+
   invertedSquaresCharMap: {
     q: "🆀",
     w: "🆆",
@@ -2077,6 +2171,7 @@ export const fonts = {
     n: "🅽",
     m: "🅼",
   },
+
   cursiveCharMap: {
     0: "0",
     1: "1",
@@ -2141,6 +2236,7 @@ export const fonts = {
     Y: "𝓨",
     Z: "𝓩",
   },
+
   oldEnglishCharMap: {
     a: "𝔞",
     b: "𝔟",
@@ -2195,6 +2291,7 @@ export const fonts = {
     Y: "𝔜",
     Z: "ℨ",
   },
+
   wideTextCharMap: {
     "`": "`",
     1: "１",
