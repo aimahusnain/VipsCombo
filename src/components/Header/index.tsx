@@ -23,9 +23,9 @@ export interface MenuItem {
 
 export const mymenuitems: MenuItem[] = [
   {
-    id: "about us",
-    label: "About Us",
-    path: "/about",
+    id: "name generator",
+    label: "Fancy Name Generator",
+    path: "/name-generator",
   },
   {
     id: "contact us",
