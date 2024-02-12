@@ -2,6 +2,8 @@
 
 import React, { useState, ChangeEvent } from "react";
 import { fonts } from "./data";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface FancyTextContainerProps {
   charMap: { [key: string]: string };
@@ -16,8 +18,7 @@ const FancyTextGenerator: React.FC = () => {
     setInputText(event.target.value);
   };
 
-    const displayedText = inputText.trim() || "VIPs Combo";
-
+  const displayedText = inputText.trim() || "VIPs Combo";
 
   return (
     <div className="mx-auto max-w-6xl px-4">
@@ -31,14 +32,15 @@ const FancyTextGenerator: React.FC = () => {
       />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
         {Object.entries(fonts).map(([fontName, fontMap]) => (
-         <FancyTextContainer
+          <FancyTextContainer
             key={fontName}
             charMap={fontMap}
-            inputText={displayedText} // Pass displayedText instead of inputText
+            inputText={displayedText}
             fontName={fontName}
           />
         ))}
       </div>
+      <ToastContainer />
     </div>
   );
 };
@@ -48,25 +50,33 @@ const FancyTextContainer: React.FC<FancyTextContainerProps> = ({
   inputText,
   fontName,
 }) => {
- const generateFancyText = (text: string, charMap: { [key: string]: string }) => {
-  return text
-    .split("")
-    .map((char, index) => {
-      const lowercaseChar = char.toLowerCase();
-      if (charMap[lowercaseChar]) {
-        return text[index].toUpperCase() === char ? charMap[lowercaseChar].toUpperCase() : charMap[lowercaseChar];
-      } else {
-        return char;
-      }
-    })
-    .join("");
-};
-
+  const generateFancyText = (text: string, charMap: { [key: string]: string }) => {
+    return text
+      .split("")
+      .map((char, index) => {
+        const lowercaseChar = char.toLowerCase();
+        if (charMap[lowercaseChar]) {
+          return text[index].toUpperCase() === char ? charMap[lowercaseChar].toUpperCase() : charMap[lowercaseChar];
+        } else {
+          return char;
+        }
+      })
+      .join("");
+  };
 
   const fancyText = generateFancyText(inputText, charMap);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(fancyText);
+    toast.success("Text copied to clipboard!", {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (
