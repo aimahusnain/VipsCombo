@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, ChangeEvent } from "react";
+import { History } from 'lucide-react'; 
+import { Gem } from 'lucide-react';
 import {
   fonts,
   strikeThrough,
@@ -38,10 +40,10 @@ interface FancyTextContainerProps {
 
 const FancyTextGenerator: React.FC = () => {
   const [inputText, setInputText] = useState<string>("");
-  const [visibleFonts, setVisibleFonts] = useState<number>(15);
+  const [visibleFonts, setVisibleFonts] = useState<number>(12);
 
   const handleShowMoreFonts = () => {
-    setVisibleFonts((prevVisibleFonts) => prevVisibleFonts + 15);
+    setVisibleFonts((prevVisibleFonts) => prevVisibleFonts + 12);
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -51,7 +53,7 @@ const FancyTextGenerator: React.FC = () => {
   return (
     <div className="px-4 mt-4 mb-3">
       <div className="border border-zinc-200 shadow-md bg-transparent p-4 mb-3 rounded-2xl pt-8 gap-2 flex flex-col text-center justify-center">
-        <p className="text-4xl font-normal text-[#7b33f1] text-center">
+        <p className="text-3xl md:text-4xl font-normal text-[#7b33f1] text-center">
           Fancy Text Generator for Elegant and Formal Fonts
         </p>
         <p className="text-sm font-normal text-center text-[#5F5F5F] dark:text-white">
@@ -173,27 +175,42 @@ const FancyTextGenerator: React.FC = () => {
           onChange={handleInputChange}
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-6 md:gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-2 md:gap-10">
         <div className="">
           <p className="font-bold">Select a font style</p>
-          <div className="mt-3 flex flex-row md:flex-col">
-          <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black rounded-full">
-              Recent
+          <div className="mt-3 flex flex-row md:flex-col flex-wrap gap-y-2 font-bold">
+          <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+          <History />  Recent
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black rounded-full">
-              Recent
+              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              All
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black rounded-full">
-              Recent
+              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              Cool
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black rounded-full">
-              Recent
+              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              <Gem /> Fancy
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black rounded-full">
-              Recent
+              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              Cursive
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black rounded-full">
-              Recent
+               <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              Small
+            </div>
+              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              Bold
+            </div>
+              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              Glitch
+            </div>
+              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              letter cases
+            </div>
+              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              Symbol text
+            </div>
+              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              Text art
             </div>
             </div>
         </div>
