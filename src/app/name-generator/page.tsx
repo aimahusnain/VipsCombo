@@ -14,6 +14,9 @@ import {
   heartsBetween,
   arrowBelow,
   crossAboveBelow,
+  Magical_Fancy_Font,
+  Medical_Serif_Font,
+  Lovely_Heart_Font,
 } from "./data";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -21,6 +24,7 @@ import { Input } from "../../components/ui/input";
 
 const combinedCharMap: any = {
   ...fonts,
+  Magical_Fancy_Font: Magical_Fancy_Font,
   strikeThrough: strikeThrough,
   tildeStrikeThrough: tildeStrikeThrough,
   underline: underline,
@@ -30,6 +34,8 @@ const combinedCharMap: any = {
   heartsBetween: heartsBetween,
   arrowBelow: arrowBelow,
   crossAboveBelow: crossAboveBelow,
+  Medical_Serif_Font:Medical_Serif_Font,
+  Lovely_Heart_Font:Lovely_Heart_Font,
 };
 
 interface FancyTextContainerProps {
