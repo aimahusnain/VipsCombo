@@ -297,6 +297,9 @@ export function Medical_Serif_Font(text: string): string {
 export function Lovely_Heart_Font(text: string): string {
   return `♡٨ﮩ٨ﮩﮩ٨ﮩﮩ٨ﮩ ${text.split('').map(char => fonts.Lovely_Heart_Font[char] || char).join('')} ﮩ٨ﮩﮩ٨ﮩﮩ٨ﮩ٨♡`;
 }
+export function Delicate_Qoutes_Font(text: string): string {
+  return `❝${text.split('').map(char => fonts.Lovely_Heart_Font[char] || char).join('')}❞`;
+}
 export function strikeThrough(text: string): string {
   return text.split("").join("̶") + "̶";
 }

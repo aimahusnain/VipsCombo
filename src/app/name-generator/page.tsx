@@ -17,6 +17,7 @@ import {
   Magical_Fancy_Font,
   Medical_Serif_Font,
   Lovely_Heart_Font,
+  Delicate_Qoutes_Font,
 } from "./data";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -36,6 +37,7 @@ const combinedCharMap: any = {
   crossAboveBelow: crossAboveBelow,
   Medical_Serif_Font:Medical_Serif_Font,
   Lovely_Heart_Font:Lovely_Heart_Font,
+  Delicate_Qoutes_Font:Delicate_Qoutes_Font,
 };
 
 interface FancyTextContainerProps {
@@ -51,6 +53,8 @@ const FancyTextGenerator: React.FC = () => {
   const handleShowMoreFonts = () => {
     setVisibleFonts((prevVisibleFonts) => prevVisibleFonts + 12);
   };
+
+ 
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
@@ -279,16 +283,18 @@ const FancyTextContainer: React.FC<FancyTextContainerProps> = ({
   const fancyText = generateFancyText(inputText);
   const [isCopied, setIsCopied] = useState(false);
   const handleCopy = () => {
-    navigator.clipboard.writeText(fancyText);
+
+    // Set the copied state to true
     setIsCopied(true);
 
-    // Reset the copy status after a certain duration
+    // Reset the copied state after a short delay
     setTimeout(() => {
       setIsCopied(false);
     }, 1000);
 
-    toast.success("Copied to clipboard!", {
-      position: "top-right",
+    // Display toast notification
+    toast.success('Copied to clipboard!', {
+      position: 'top-right',
       autoClose: 1000,
       hideProgressBar: true,
       closeOnClick: true,
@@ -300,20 +306,22 @@ const FancyTextContainer: React.FC<FancyTextContainerProps> = ({
 
   return (
     <div
-      onClick={handleCopy}
-      className="copy-container items-center dark:text-white cursor-pointer flex justify-between bg-transparent  border-[#dfdfdf] border-b py-3 pr-3 pl-1 rounded w-full"
-    >
-      <h2 className="text-2xl font-bold truncate w-[73rem]">{fancyText}</h2>
-      <div>
-        <button className="text-white font-bold rounded-xl px-4 py-2 bg-[#c209c1]">
-          {isCopied ? (
-            <div className="copied-message text-white">Copied!</div>
-          ) : (
-            <button className="text-white">Copy</button>
-          )}
-        </button>
-      </div>
+    onClick={handleCopy}
+    className="copy-container  items-center dark:text-white cursor-pointer flex justify-between bg-transparent border-[#dfdfdf] border-b py-3 pr-3 pl-1 rounded w-full"
+  >
+ <h2 className="text-2xl font-bold truncate w-[73rem]">
+        {fancyText}
+      </h2>
+    <div>
+      <button className="text-white font-bold rounded-xl px-4 py-2 bg-[#c209c1]" >
+        {isCopied ? (
+          <div className="copied-message text-white">Copied!</div>
+        ) : (
+          <button className="text-white">Copy</button>
+        )}
+      </button>
     </div>
+  </div>
   );
 };
 
