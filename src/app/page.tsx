@@ -29,7 +29,7 @@ const Home = () => {
       <div className="visible sm:hidden">
         <SmallDeviceComponent/>
       </div>
-
+      {/* TODO: Design the Homepage */}
       <div className="hidden sm:flex">
         <HomePageComponent />
       </div>
