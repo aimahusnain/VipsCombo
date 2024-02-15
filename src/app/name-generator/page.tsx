@@ -1,10 +1,20 @@
 "use client";
 
 import React, { useState, ChangeEvent } from "react";
-import { History } from 'lucide-react'; 
-import { Gem } from 'lucide-react';
+import { History } from "lucide-react";
+import { GoPencil } from "react-icons/go";
+import { AiOutlineItalic } from "react-icons/ai";
+import { BsLightningCharge } from "react-icons/bs";
+import { CiStar } from "react-icons/ci";
+import { LuBold } from "react-icons/lu";
+import { CaseSensitive } from "lucide-react";
+import { ImCool } from "react-icons/im";
+import { Gem } from "lucide-react";
+import { RxLetterCaseCapitalize } from "react-icons/rx";
+
 import {
   fonts,
+  Dot_Saparater,
   strikeThrough,
   tildeStrikeThrough,
   underline,
@@ -17,7 +27,6 @@ import {
   Magical_Fancy_Font,
   Medical_Serif_Font,
   Lovely_Heart_Font,
-  Delicate_Qoutes_Font,
 } from "./data";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -25,7 +34,8 @@ import { Input } from "../../components/ui/input";
 
 const combinedCharMap: any = {
   ...fonts,
-  Magical_Fancy_Font: Magical_Fancy_Font,
+  "Dot Saparater": Dot_Saparater,
+  "Magical Fancy Font": Magical_Fancy_Font,
   strikeThrough: strikeThrough,
   tildeStrikeThrough: tildeStrikeThrough,
   underline: underline,
@@ -35,9 +45,8 @@ const combinedCharMap: any = {
   heartsBetween: heartsBetween,
   arrowBelow: arrowBelow,
   crossAboveBelow: crossAboveBelow,
-  Medical_Serif_Font:Medical_Serif_Font,
-  Lovely_Heart_Font:Lovely_Heart_Font,
-  Delicate_Qoutes_Font:Delicate_Qoutes_Font,
+  "Medical Serif Font": Medical_Serif_Font,
+  "Lovely Heart Font": Lovely_Heart_Font,
 };
 
 interface FancyTextContainerProps {
@@ -49,23 +58,23 @@ interface FancyTextContainerProps {
 const FancyTextGenerator: React.FC = () => {
   const [inputText, setInputText] = useState<string>("");
   const [visibleFonts, setVisibleFonts] = useState<number>(12);
+  const fontNames = Object.keys(fonts);
 
   const handleShowMoreFonts = () => {
     setVisibleFonts((prevVisibleFonts) => prevVisibleFonts + 12);
   };
-
- 
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
   };
   const displayedText = inputText.trim() || "VIPs Combo";
   return (
-    <div className="px-4 mt-4 mb-3">
+    <div className="px-4 mt-4 mb-3 mx-2 sm:mx-7">
       <div className="border border-zinc-200 shadow-md bg-transparent p-4 mb-3 rounded-2xl pt-8 gap-2 flex flex-col text-center justify-center">
         <p className="text-3xl md:text-4xl font-normal text-[#7b33f1] text-center">
           Fancy Text Generator for Elegant and Formal Fonts
         </p>
+
         <p className="text-sm font-normal text-center text-[#5F5F5F] dark:text-white">
           An assortment of fancy text fonts to class up your content for any
           audience.
@@ -173,7 +182,7 @@ const FancyTextGenerator: React.FC = () => {
               ></path>
             </svg>
           </div>
-          <p>4.8</p>
+          <p>4.9</p>
           <p className="text-[#5F5F5F] text-[12.5px] mt-0.5">(1,284)</p>
         </div>
 
@@ -189,40 +198,40 @@ const FancyTextGenerator: React.FC = () => {
         <div className="">
           <p className="font-bold">Select a font style</p>
           <div className="mt-3 flex flex-row md:flex-col flex-wrap gap-y-2 font-bold">
-          <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
-          <History />  Recent
+            <div className="bg-white dark:bg-transparent border border-zinc-400 dark:text-white shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              <History /> Recent
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+            <div className="bg-white dark:bg-transparent border border-zinc-400 dark:text-white shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
               All
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
-              Cool
+            <div className="bg-white dark:bg-transparent border border-zinc-400 dark:text-white shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              <ImCool size={23} /> Cool
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+            <div className="bg-white dark:bg-transparent border border-zinc-400 dark:text-white shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
               <Gem /> Fancy
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
-              Cursive
+            <div className="bg-white dark:bg-transparent border border-zinc-400 dark:text-white shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              <AiOutlineItalic size={25} /> Cursive
             </div>
-               <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
-              Small
+            <div className="bg-white dark:bg-transparent border border-zinc-400 dark:text-white shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              <CaseSensitive size={28} /> Small
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
-              Bold
+            <div className="bg-white dark:bg-transparent border border-zinc-400 dark:text-white shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              <LuBold size={24} /> Bold
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
-              Glitch
+            <div className="bg-white dark:bg-transparent border border-zinc-400 dark:text-white shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              <BsLightningCharge size={23} /> Glitch
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
-              letter cases
+            <div className="bg-white dark:bg-transparent border border-zinc-400 dark:text-white shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              <RxLetterCaseCapitalize size={23} /> letter cases
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
-              Symbol text
+            <div className="bg-white dark:bg-transparent border border-zinc-400 dark:text-white shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              <CiStar size={24} /> Symbol text
             </div>
-              <div className="bg-white border border-zinc-400 shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
-              Text art
+            <div className="bg-white dark:bg-transparent border border-zinc-400 dark:text-white shadow-md flex px-6 py-2 text-black gap-2 rounded-full">
+              <GoPencil size={24} /> Text art
             </div>
-            </div>
+          </div>
         </div>
         <div className="w-full col-span-5">
           {Object.entries(combinedCharMap)
@@ -283,7 +292,6 @@ const FancyTextContainer: React.FC<FancyTextContainerProps> = ({
   const fancyText = generateFancyText(inputText);
   const [isCopied, setIsCopied] = useState(false);
   const handleCopy = () => {
-
     // Set the copied state to true
     setIsCopied(true);
 
@@ -293,8 +301,8 @@ const FancyTextContainer: React.FC<FancyTextContainerProps> = ({
     }, 1000);
 
     // Display toast notification
-    toast.success('Copied to clipboard!', {
-      position: 'top-right',
+    toast.success("Copied to clipboard!", {
+      position: "top-right",
       autoClose: 1000,
       hideProgressBar: true,
       closeOnClick: true,
@@ -303,25 +311,24 @@ const FancyTextContainer: React.FC<FancyTextContainerProps> = ({
       progress: undefined,
     });
   };
-
   return (
     <div
-    onClick={handleCopy}
-    className="copy-container  items-center dark:text-white cursor-pointer flex justify-between bg-transparent border-[#dfdfdf] border-b py-3 pr-3 pl-1 rounded w-full"
-  >
- <h2 className="text-2xl font-bold truncate w-[73rem]">
-        {fancyText}
-      </h2>
-    <div>
-      <button className="text-white font-bold rounded-xl px-4 py-2 bg-[#c209c1]" >
+      onClick={handleCopy}
+      className="copy-container w-full justify-between flex items-center dark:text-white cursor-pointer  bg-transparent border-[#dfdfdf] border-b py-3 pr-3 pl-1 rounded"
+    >
+      <div className="truncate mx-3">
+        <h2 className="text-2xl font-bold truncate max-w-max">{fancyText}</h2>
+        <p className="text-zinc-400">{fontName}</p>
+      </div>
+      <button className="text-white font-bold rounded-xl px-4 py-2 bg-[#c209c1]">
         {isCopied ? (
           <div className="copied-message text-white">Copied!</div>
         ) : (
           <button className="text-white">Copy</button>
         )}
       </button>
+
     </div>
-  </div>
   );
 };
 
